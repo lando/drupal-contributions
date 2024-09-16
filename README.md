@@ -40,7 +40,7 @@ Video presentation: [SFDUG - June 25 - Lando for Contrib / LLC, Corporation or S
 Let's step through how to spin up your contribution workflow. First clone down this repo:
 
 ```
-git clone -b 10.x git@github.com:lando/drupal-contributions.git
+git clone -b 11.x git@github.com:lando/drupal-contributions.git
 cd drupal-contributions
 ```
 
@@ -54,7 +54,7 @@ Next `rebuild` the `drupal-contributions` app:
 lando rebuild -y
 ```
 
-This will pull in the drupal source code from the latest `10.x-dev` branch, run `composer install` to get dependencies, install Drupal, and provide us with a one time login link (`uli`). You can update the version in the `/config/drupal-branch.php` file.
+This will pull in the drupal source code from the latest `11.x-dev` branch, run `composer install` to get dependencies, install Drupal, and provide us with a one time login link (`uli`). You can update the version in the `/config/drupal-branch.php` file.
 
 After `rebuild` completes you should see something similar to this:
 
@@ -83,7 +83,7 @@ and the `web` directory should be populated with the Drupal source code.
 
 #### Test a Core Patch
 
-Now we are ready to find a Drupal core issue. Search the issue queue for a core `10.x` issue that you want to test. Grab the URL of the latest patch and apply it to our `drupal-contributions` environment.
+Now we are ready to find a Drupal core issue. Search the issue queue for a core `11.x` issue that you want to test. Grab the URL of the latest patch and apply it to our `drupal-contributions` environment.
 
 For example, if you choose the issue [Create new "Views Responsive Grid" format for Views Core](https://www.drupal.org/project/drupal/issues/3151553), the latest corresponding patch (as of 23 April 2022) is https://git.drupalcode.org/project/drupal/-/merge_requests/1585.diff ("plain diff" link). To apply this patch:
 
@@ -287,7 +287,7 @@ lando nightwatch tests/Drupal/Nightwatch/Tests/exampleTest.js
 
 ## La Fin
 
-Once you have the latest `10.x-dev` branch you can keep it and sync it periodically and `lando start`'s will keep that around. If you want to totally start fresh:
+Once you have the latest `11.x-dev` branch you can keep it and sync it periodically and `lando start`'s will keep that around. If you want to totally start fresh:
 
 ```
 # destroys drupal-contributions app and removes /web
